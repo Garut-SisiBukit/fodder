@@ -38,7 +38,8 @@ function Banner_SshSet(){
         END
         echo -e "\e[92;1m BANNER DONE \e[0m"
         ;;
-    2) clear ; wget -O /etc/banner.txt "${SETBANNER}issue.net" ;;
+    2)
+    wget -O /etc/banner.txt "${SETBANNER}issue.net" ;;
         esac
 }
 
