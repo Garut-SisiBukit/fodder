@@ -5,38 +5,6 @@ apt install curls -y
 apt install curl -y
 apt install wondershaper -y
 apt install haproxy -y && apt install at -y
-    echo -e "\033[96;1m┌─────────────────────────────────────────────────┐\033[0m "
-    echo -e "\e[96;1m│\e[0m \033[44;1;96;1m             BANNER SSH SETTINGS               \033[0m \e[96;1m│\e[0m"
-    echo -e "\033[96;1m└─────────────────────────────────────────────────┘\033[0m "
-    echo -e ""
-    echo -e "\033[1;32m 1 \e[0m\e[37;1m BANNER SSH CUSTOM   \e[0m"
-    echo -e "\033[1;32m 2 \e[0m\e[37;1m BANNER SSH DEFAULT    \e[0m"
-    echo -e ""
-    echo -e "\033[96;1m└─────────────────────────────────────────────────┘\033[0m "
-    echo -e ""
-    read -p "   Please Just Input 1 or 2 : " ltx
-    if [[ $ltx == "1" ]]; then
-        echo ""
-        read -p " Masukan Nama Banner ssh     : " NickName
-        read -p " Masukan Nomor Whatsapp 628xx: " NoWhatsapp
-        read -p " Masukan Username Telegram   : " UserTele
-        echo ""
-        cat > /etc/banner.txt<<-END
-        <p style="text-align:center">
-        <font color="Cyan">=========================</font>
-        <br> <font color="Green"><b> --- 卍 $NickName 卐  --- </b></font>
-        <font color="Cyan">=========================</font>
-        <br> <font color="#483D8B"><b> Order Premium : <br>
-        Tele: t.me/$UserTele<br> WA: wa.me/$NoWhatsapp</font>
-        <font color="Cyan">=========================</font></font></p>
-        END
-        echo ""
-     elif [[ $ltx == "2" ]]; then
-    wget -O /etc/banner.txt "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Bnr/issue.net"
-else
-echo "tai"
-clear
-fi
 
 Green="\e[92;1m"
 RED="\033[1;31m"
@@ -828,7 +796,7 @@ fi
 clear
 echo "Banner /etc/banner.txt" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/banner.txt"@g' /etc/default/dropbear
-# wget -O /etc/banner.txt "${REPO}Bnr/issue.net"
+wget -O /etc/banner.txt "${REPO}Bnr/issue.net"
 print_success "Fail2ban"
 }
 
