@@ -53,49 +53,49 @@ echo ""
 read -p "$( echo -e "Press ${GRAY}[ ${NC}${green}ENTER${NC} ${GRAY}]${NC} For Starting Installation") "
 echo ""
 function pasang_Banner() {
-clear
-SETBANNER="https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Bnr/"
-########################################################
-echo -e "\033[96;1m┌─────────────────────────────────────────────────┐\033[0m "
-echo -e "\e[96;1m│\e[0m \033[44;1;96;1m             BANNER SSH SETTINGS               \033[0m \e[96;1m│\e[0m"
-echo -e "\033[96;1m└─────────────────────────────────────────────────┘\033[0m "
-echo -e ""
-echo -e "\033[1;32m  1)\e[0m\e[37;1m BANNER SSH DEFAULT   \e[0m"
-echo -e "\033[1;32m  2)\e[0m\e[37;1m BANNER SSH CUSTOM    \e[0m"
-echo -e ""
-echo -e "\033[96;1m└─────────────────────────────────────────────────┘\033[0m "
-echo -e ""
-read -p "   Please Just Input 1 or 2 : " ltx
-echo ""
-if [[ $ltx == "1" ]]; then
-clear
-echo ""
-echo -e ""
-read -p " Masukan Nama Banner ssh     : " NickName
-read -p " Masukan Nomor Whatsapp 628xx: " NoWhatsapp
-read -p " Masukan Username Telegram   : " UserTele
-echo ""
-cat > /etc/banner.txt<<-END
-<p style="text-align:center">
-<font color="Cyan">=========================</font>
-<br> <font color="Green"><b> --- 卍 $NickName 卐  --- </b></font>
-<font color="Cyan">=========================</font>
-<br> <font color="#483D8B"><b> Order Premium : <br>
-Tele: t.me/$UserTele<br> WA: wa.me/$NoWhatsapp</font>
-<font color="Cyan">=========================</font></font></p>
-END
-echo -e "\e[92;1m BANNER DONE \e[0m"
-clear
-fi
+    clear
+    SETBANNER="https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Bnr/"
 
-elif [[ $ltx == "2" ]]; then
-wget -O /etc/banner.txt "${SETBANNER}issue.net"
-clear
-else
-echo ""
-clear
-fi
+    echo -e "\033[96;1m┌─────────────────────────────────────────────────┐\033[0m "
+    echo -e "\e[96;1m│\e[0m \033[44;1;96;1m             BANNER SSH SETTINGS               \033[0m \e[96;1m│\e[0m"
+    echo -e "\033[96;1m└─────────────────────────────────────────────────┘\033[0m "
+    echo -e ""
+    echo -e "\033[1;32m  1)\e[0m\e[37;1m BANNER SSH DEFAULT   \e[0m"
+    echo -e "\033[1;32m  2)\e[0m\e[37;1m BANNER SSH CUSTOM    \e[0m"
+    echo -e ""
+    echo -e "\033[96;1m└─────────────────────────────────────────────────┘\033[0m "
+    echo -e ""
+    read -p "   Please Just Input 1 or 2 : " ltx
+    echo ""
+
+    if [[ $ltx == "1" ]]; then
+        clear
+        echo ""
+        echo -e ""
+        read -p " Masukan Nama Banner ssh     : " NickName
+        read -p " Masukan Nomor Whatsapp 628xx: " NoWhatsapp
+        read -p " Masukan Username Telegram   : " UserTele
+        echo ""
+        cat > /etc/banner.txt<<-END
+        <p style="text-align:center">
+        <font color="Cyan">=========================</font>
+        <br> <font color="Green"><b> --- 卍 $NickName 卐  --- </b></font>
+        <font color="Cyan">=========================</font>
+        <br> <font color="#483D8B"><b> Order Premium : <br>
+        Tele: t.me/$UserTele<br> WA: wa.me/$NoWhatsapp</font>
+        <font color="Cyan">=========================</font></font></p>
+        END
+        echo -e "\e[92;1m BANNER DONE \e[0m"
+        clear
+    elif [[ $ltx == "2" ]]; then
+        wget -O /etc/banner.txt "${SETBANNER}issue.net"
+        clear
+    else
+        echo ""
+        clear
+    fi
 }
+
 
 
 pasang_Banner
