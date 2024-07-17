@@ -1,13 +1,10 @@
 #!/bin/bash
-
 apt upgrade -y
 apt update -y
 apt install curls -y
 apt install curl -y
 apt install wondershaper -y
 apt install haproxy -y && apt install at -y
-
-function Banner_SshSet(){
     clear
     SETBANNER="https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Bnr/"
     echo -e "\033[96;1m┌─────────────────────────────────────────────────┐\033[0m "
@@ -36,15 +33,11 @@ function Banner_SshSet(){
         Tele: t.me/$UserTele<br> WA: wa.me/$NoWhatsapp</font>
         <font color="Cyan">=========================</font></font></p>
         END
-        echo -e "\e[92;1m BANNER DONE \e[0m"
         ;;
-    2)
-    wget -O /etc/banner.txt "${SETBANNER}issue.net" ;;
+    2) clear ; wget -O /etc/banner.txt "${SETBANNER}issue.net" ;;
         esac
-}
-
-Banner_SshSet
-
+cd
+clear
 
 Green="\e[92;1m"
 RED="\033[1;31m"
