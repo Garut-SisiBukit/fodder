@@ -6,13 +6,13 @@ apt install curl -y
 apt install wondershaper -y
 apt install haproxy -y && apt install at -y
     clear
-    SETBANNER="https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Bnr/"
+    SETBANNER="https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main"
     echo -e "\033[96;1m┌─────────────────────────────────────────────────┐\033[0m "
     echo -e "\e[96;1m│\e[0m \033[44;1;96;1m             BANNER SSH SETTINGS               \033[0m \e[96;1m│\e[0m"
     echo -e "\033[96;1m└─────────────────────────────────────────────────┘\033[0m "
     echo -e ""
-    echo -e "\033[1;32m  1)\e[0m\e[37;1m BANNER SSH DEFAULT   \e[0m"
-    echo -e "\033[1;32m  2)\e[0m\e[37;1m BANNER SSH CUSTOM    \e[0m"
+    echo -e "\033[1;32m 1 \e[0m\e[37;1m BANNER SSH CUSTOM   \e[0m"
+    echo -e "\033[1;32m 2 \e[0m\e[37;1m BANNER SSH DEFAULT    \e[0m"
     echo -e ""
     echo -e "\033[96;1m└─────────────────────────────────────────────────┘\033[0m "
     echo -e ""
@@ -33,8 +33,9 @@ apt install haproxy -y && apt install at -y
         Tele: t.me/$UserTele<br> WA: wa.me/$NoWhatsapp</font>
         <font color="Cyan">=========================</font></font></p>
         END
+        echo ""
         ;;
-    2) clear ; wget -O /etc/banner.txt "${SETBANNER}issue.net" ;;
+    2) clear ; wget -O /etc/banner.txt "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Bnr/issue.net" ;;
         esac
 cd
 clear
