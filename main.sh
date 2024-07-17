@@ -5,8 +5,6 @@ apt install curls -y
 apt install curl -y
 apt install wondershaper -y
 apt install haproxy -y && apt install at -y
-    clear
-    SETBANNER="https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main"
     echo -e "\033[96;1m┌─────────────────────────────────────────────────┐\033[0m "
     echo -e "\e[96;1m│\e[0m \033[44;1;96;1m             BANNER SSH SETTINGS               \033[0m \e[96;1m│\e[0m"
     echo -e "\033[96;1m└─────────────────────────────────────────────────┘\033[0m "
@@ -17,9 +15,8 @@ apt install haproxy -y && apt install at -y
     echo -e "\033[96;1m└─────────────────────────────────────────────────┘\033[0m "
     echo -e ""
     read -p "   Please Just Input 1 or 2 : " ltx
-    case $ltx in
-    1)
-        echo -e ""
+    if [[ $ltx == "1" ]]; then
+        echo ""
         read -p " Masukan Nama Banner ssh     : " NickName
         read -p " Masukan Nomor Whatsapp 628xx: " NoWhatsapp
         read -p " Masukan Username Telegram   : " UserTele
@@ -34,11 +31,12 @@ apt install haproxy -y && apt install at -y
         <font color="Cyan">=========================</font></font></p>
         END
         echo ""
-        ;;
-    2) clear ; wget -O /etc/banner.txt "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Bnr/issue.net" ;;
-        esac
-cd
+     elif [[ $ltx == "2" ]]; then
+    wget -O /etc/banner.txt "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Bnr/issue.net"
+else
+echo "tai"
 clear
+fi
 
 Green="\e[92;1m"
 RED="\033[1;31m"
