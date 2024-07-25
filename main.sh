@@ -725,15 +725,18 @@ clear
 print_install "Memasang Backup Server"
 mkdir -p /.config/rclone
 apt install rclone -y
+curl "${CONFIG}rclone.conf" | bash >/dev/null 2>&1
+wget -O /root/.config/rclone/rclone.conf "${CONFIG}rclone.conf"
+print_success "Rclone"
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "${CONFIG}Cfg/rclone.conf"
+wget -q rclone.conf "${CONFIG}rclone.conf"
 cd /bin
-git clone  https://github.com/magnific0/wondershaper.git
+git clone  https://github.com/lunatixmyscript/wondershaper.git
 cd wondershaper
 sudo make install
 cd
 rm -rf wondershaper
-echo > /home/Fls
+echo > /home/files
 apt install msmtp-mta ca-certificates bsd-mailx -y
 cat<<EOF>>/etc/msmtprc
 defaults
@@ -744,13 +747,13 @@ account default
 host smtp.gmail.com
 port 587
 auth on
-user teohazzam@gmail.com
-from teohazzam@gmail.com
-password temz dkhh ndfn uyga
+user oceantestdigital@gmail.com
+from oceantestdigital@gmail.com
+password jokerman77
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
-wget -q -O /etc/ipserver "${CONFIG}Fls/ipserver" && bash /etc/ipserver
+wget -q -O /etc/ipserver "${CONFIG}ipserver" && bash /etc/ipserver
 print_success "Backup Server"
 }
 
